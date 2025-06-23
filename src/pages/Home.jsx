@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../Component/Navbar";
-import Restuarants from "../Component/Restuarants";
+import Restaurants from "../Component/Restaurants";
 const Home = () => {
+  const [restaurants, setRestaurants] = useState([]);
+  useEffect(() => {
+    //call api: getAllRestuarants
+    fetch("http://localhost:3000/restaurants")
+      .then((res) => {
+        //convert to Json
+        console.log(res);
+        return res.json();
+      })
+      .then((response) => {
+        setRestaurants(response);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
   return (
     <div className="container mx-auto">
-      <Navbar />;
+      <Navbar />
       <div>
         <h1 className="title justify-center text-3xl text-center m-5 p-5">
           Grap Restuarant
@@ -31,9 +47,10 @@ const Home = () => {
           </label>
         </div>
         <div>
-          <Restuarants />
+          <Restaurants />
         </div>
       </div>
+      <Restaurants restaurants={restaurants} />
     </div>
   );
 };

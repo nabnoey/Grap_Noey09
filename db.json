@@ -53,6 +53,19 @@
       "title": "Namo Home Café Roti Coffee Milk Tea Food byครัวแสนแหล๋น - งามวงศ์วาน",
       "type": "ของหวาน",
       "img": "https://food-cms.grab.com/compressed_webp/merchants/3-C2EJTYC2ENMBEA/hero/a701098f0c3245c6bb29334ef2293054_1608967477104520062.webp"
+    },
+    {
+      "id": "c07d",
+      "type": "กาแฟ",
+      "title": "ชาาาา",
+      "img": "https://i.pinimg.com/736x/c0/af/c4/c0afc4c312197ca49298048e32a98423.jpg"
+    }
+  ],
+  "users": [
+    {
+      "username": "user1",
+      "password": "123456",
+      "id": "e4e5"
     }
   ]
 }
