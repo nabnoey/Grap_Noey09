@@ -1,20 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
 
-const Add = () => {
+const Update = () => {
+  //Get ID from URL
+  const { id } = useParams();
   const [restaurant, setRestaurants] = useState({
     type: "",
     title: "",
     img: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setRestaurants({ ...restaurant, [name]: value });
-  };
+  //2.Gett Restaurant By I
+
+  useEffect(() => {
+    fetch("http://localhost:3000/restaurants/" + id)
+      .then((res) => {
+        //convert to Json
+        console.log(res);
+        return res.json();
+      })
+      .then((response) => {
+        setRestaurants(response);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [id]);
+
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://localhost:3000/restaurants", {
-        method: "POST",
+      const response = await fetch("http://localhost:3000/restaurants/" + id, {
+        method: "PUT",
         body: JSON.stringify(restaurant),
       });
       if (response.ok) {
@@ -33,7 +49,7 @@ const Add = () => {
     <div className="top-5">
       <div>
         <form className="flex flex-col justify-center items-center gap-6 p-6 bg-white 	shadow-lg shadow-fuchsia-200 rounded-md  relative top-25 w-full max-w-md mx-auto  ">
-          <h2 className="text-xl font-bold">เพิ่มเลยจ้า</h2>
+          <h2 className="text-xl font-bold">แก้ไขข้อมูล</h2>
 
           <div className="w-full ">
             <label className="block mb-1">title</label>
@@ -42,7 +58,6 @@ const Add = () => {
               value={restaurant.title}
               className="input input-primary w-full"
               name="title"
-              onChange={handleChange}
             />
           </div>
 
@@ -54,7 +69,6 @@ const Add = () => {
               value={restaurant.type}
               list="browsers"
               name="type"
-              onChange={handleChange}
             />
             <datalist id="browsers">
               <option value="ชานมไข่มุก" />
@@ -70,7 +84,6 @@ const Add = () => {
               value={restaurant.img}
               className="input input-primary w-full"
               name="img"
-              onChange={handleChange}
             />
           </div>
           {restaurant.img && (
@@ -85,7 +98,7 @@ const Add = () => {
               className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-gray-400 transition"
               onClick={handleSubmit}
             >
-              Add
+              Update
             </button>
             <button
               type="button"
@@ -101,4 +114,4 @@ const Add = () => {
   );
 };
 
-export default Add;
+export default Update;

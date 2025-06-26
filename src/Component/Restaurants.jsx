@@ -9,6 +9,7 @@ const Restaurants = ({ restaurants }) => {
           restaurants.map((restaurants) => {
             return (
               <Cards
+                key={restaurants.id}
                 id={restaurants.id}
                 title={restaurants.titel}
                 type={restaurants.type}
