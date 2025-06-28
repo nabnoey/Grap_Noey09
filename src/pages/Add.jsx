@@ -33,27 +33,27 @@ const Add = () => {
     <div className="top-5">
       <div>
         <form className="flex flex-col justify-center items-center gap-6 p-6 bg-white 	shadow-lg shadow-fuchsia-200 rounded-md  relative top-25 w-full max-w-md mx-auto  ">
-          <h2 className="text-xl font-bold">เพิ่มเลยจ้า</h2>
+          <h2 className="text-xl font-bold text-black">เพิ่มเลยจ้า</h2>
 
           <div className="w-full ">
-            <label className="block mb-1">title</label>
+            <label className="block mb-1 text-black">title</label>
             <input
               type="text"
               value={restaurant.title}
-              className="input input-primary w-full"
-              name="title"
+              className="input input-primary w-full bg-blue-100"
+              name="title text-black"
               onChange={handleChange}
             />
           </div>
 
           <div className="w-full">
-            <label className="block mb-1">Type: </label>
+            <label className="block mb-1 text-black">Type: </label>
             <input
               type="text"
-              className="input w-full"
+              className="input w-full bg-blue-100"
               value={restaurant.type}
               list="browsers"
-              name="type"
+              name="type text-black"
               onChange={handleChange}
             />
             <datalist id="browsers">
@@ -64,11 +64,11 @@ const Add = () => {
           </div>
 
           <div className="w-full">
-            <label className="block mb-1">img</label>
+            <label className="block mb-1 text-black">img</label>
             <input
               type="url"
               value={restaurant.img}
-              className="input input-primary w-full"
+              className="input input-primary w-full bg-blue-100"
               name="img"
               onChange={handleChange}
             />

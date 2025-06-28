@@ -1,12 +1,6 @@
 {
   "restaurants": [
     {
-      "id": "5",
-      "title": "SOrder ชากับเธอ Chagubter - เตาปูน",
-      "type": "ชา,กาแฟ",
-      "img": "https://food-cms.grab.com/compressed_webp/merchants/3-C2NYFCCDEE3VGE/hero/c77ace34288d449c95f8e456698d3581_1658460676354176549.webp"
-    },
-    {
       "id": "6",
       "title": "Maru waffle - the walk ราชพฤกษ์",
       "type": "ของหวาน",

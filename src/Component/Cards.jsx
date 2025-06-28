@@ -17,7 +17,7 @@ const Cards = (props) => {
   };
 
   return (
-    <div className="card bg-base-100 w-96 shadow-sm">
+    <div className="card bg-base-100 w-96 shadow-sm bg-pink-200 text-black">
       <figure>
         <img src={props.img} alt="Shoes" />
       </figure>
@@ -29,7 +29,7 @@ const Cards = (props) => {
         </h2>
         <p>{props.type}</p>
         <div className="card-actions justify-end">
-          <button onClick={() => handleDelete(props.id)}>Delete</button>
+          <button onClick={() => handleDelete(props.id)} className="btn btn-soft btn-error">Delete</button>
           {/* <div className="badge badge-outline">Edit</div> */}
           <a href={"/update/" + props.id} className="btn btn-soft btn-warning">
             Edit

@@ -42,7 +42,7 @@ const Home = () => {
           Grap Restuarant
         </h1>
         <div className="mb-5 flex justify-center item-center">
-          <label className="input flex item-center gap-2 w-2xl">
+          <label className="input flex item-center gap-2 w-2xl text-black bg-blue-300">
             <svg
               className="h-[1em] opacity-50"
               xmlns="http://www.w3.org/2000/svg"
@@ -61,10 +61,12 @@ const Home = () => {
             </svg>
             <input
               type="search"
+          
               name="keyword"
               onChange={(e) => handleSearch(e.target.value)}
               required
               placeholder="Search"
+            
             />
           </label>
         </div>
