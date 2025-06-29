@@ -20,8 +20,8 @@ const Add = () => {
       if (response.ok) {
         alert("แก๋วมากน้อง!!!");
         setRestaurants({
+           title: "",
           type: "",
-          title: "",
           img: "",
         });
       }
@@ -40,8 +40,8 @@ const Add = () => {
             <input
               type="text"
               value={restaurant.title}
-              className="input input-primary w-full bg-blue-100"
-              name="title text-black"
+              className="input input-primary w-full bg-blue-100 text-black"
+              name="title"
               onChange={handleChange}
             />
           </div>
@@ -50,14 +50,14 @@ const Add = () => {
             <label className="block mb-1 text-black">Type: </label>
             <input
               type="text"
-              className="input w-full bg-blue-100"
+              className="input w-full bg-blue-100 text-black"
               value={restaurant.type}
               list="browsers"
-              name="type text-black"
+              name="type"
               onChange={handleChange}
             />
             <datalist id="browsers">
-              <option value="ชานมไข่มุก" />
+              <option value="ชานม" />
               <option value="กาแฟ" />
               <option value="น้ำอัดลม" />
             </datalist>
@@ -68,7 +68,7 @@ const Add = () => {
             <input
               type="url"
               value={restaurant.img}
-              className="input input-primary w-full bg-blue-100"
+              className="input input-primary w-full bg-blue-100 text-black"
               name="img"
               onChange={handleChange}
             />

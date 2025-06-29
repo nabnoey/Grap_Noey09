@@ -10,6 +10,11 @@ const Update = () => {
     img: "",
   });
 
+    const handleChange = (e) => {
+    const { name, value } = e.target;
+    setRestaurants({ ...restaurant, [name]: value });
+  };
+
   //2.Gett Restaurant By I
 
   useEffect(() => {
@@ -49,14 +54,15 @@ const Update = () => {
     <div className="top-5">
       <div>
         <form className="flex flex-col justify-center items-center gap-6 p-6 bg-white 	shadow-lg shadow-fuchsia-200 rounded-md  relative top-25 w-full max-w-md mx-auto  ">
-          <h2 className="text-xl font-bold">แก้ไขข้อมูล</h2>
+          <h2 className="text-xl font-bold text-black">แก้ไขข้อมูล</h2>
 
           <div className="w-full ">
             <label className="block mb-1">title</label>
             <input
               type="text"
               value={restaurant.title}
-              className="input input-primary w-full"
+              className="input input-primary w-full bg-blue-100 text-black"
+              onChange={handleChange}
               name="title"
             />
           </div>
@@ -65,9 +71,10 @@ const Update = () => {
             <label className="block mb-1">Type: </label>
             <input
               type="text"
-              className="input w-full"
+              className="input w-full bg-blue-100 text-black"
               value={restaurant.type}
               list="browsers"
+              onChange={handleChange}
               name="type"
             />
             <datalist id="browsers">
@@ -75,6 +82,7 @@ const Update = () => {
               <option value="กาแฟ" />
               <option value="น้ำอัดลม" />
             </datalist>
+           
           </div>
 
           <div className="w-full">
@@ -82,7 +90,8 @@ const Update = () => {
             <input
               type="url"
               value={restaurant.img}
-              className="input input-primary w-full"
+              className="input w-full bg-blue-100 text-black"
+              onChange={handleChange}
               name="img"
             />
           </div>

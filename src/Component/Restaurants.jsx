@@ -11,7 +11,7 @@ const Restaurants = ({ restaurants }) => {
               <Cards
                 key={restaurants.id}
                 id={restaurants.id}
-                title={restaurants.titel}
+                title={restaurants.title}
                 type={restaurants.type}
                 img={restaurants.img}
               />
